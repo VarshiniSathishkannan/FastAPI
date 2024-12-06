@@ -1,0 +1,70 @@
+python -m venv venv (To create virtual environment)
+
+Make sure the python intrepreter points to this
+
+.\venv\Scripts\activate.bat ( to use virtual environment in command prompt as well)
+
+Make sure to use cmd terminal install of powershell. Once the above command is executed, will get a (venv) prompt before the shell. 
+
+Install fastapi in venv - https://fastapi.tiangolo.com/#installation
+
+pip install fastapi[all] 
+
+pip freeze -- Shows all the dependencies that got installed
+
+https://stackoverflow.com/questions/18966564/pip-freeze-vs-pip-list
+
+main.py serves the request. write the code. once done, to start the server
+
+uvicorn main:app
+
+Uvicorn running on http://127.0.0.1:8000
+
+Swagger/docs running on http://127.0.0.1:8000/docs 
+
+if we make changes to the code and save it, it won't reflect. we need to rerun the server
+
+uvicorn main:app --reload
+
+HTTP status codes
+
+psycopg2 - Python postgres connector 
+
+pip install psycopg2
+
+Sqlalchemy - Popular python ORM - Object relation model. Instead of SQL, we can define the table and write python code which internally gets converted to SQL. Layer of abstraction. SQLalchemy cannot directly work with databases, we need a driver as well 
+
+pip install sqlalchemy
+
+pydantic/schema model and sqlalchemy/orm model
+1. request/response        1. DB structure and query
+
+Password hashing
+
+pip install passlib[bcrypt]
+
+Authentication
+
+JWT Token Authentication
+
+pip install python-jose[cryptography]
+
+environment variables in postman - dev and post response setting variables
+
+query parameters
+
+url?search=sometext%20some&limit=10
+
+% means space
+& to pass multiple params
+
+env variables
+
+env variables will always be in str
+
+echo %path% - windows
+
+linux
+echo %path 
+printenv
+export path='//'
