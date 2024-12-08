@@ -68,3 +68,32 @@ linux
 echo %path 
 printenv
 export path='//'
+
+Vote/like model
+
+user can like a post only once
+
+composite key - primary key that spans multiple columns, for above case, create a table with post ID and user ID. Both of them together should be unique, so we can create a composite key on both
+
+Database migrations:
+
+Alembic tool allows incremental changes to database models. current shortcoming is once the model is created. it creates the table and we can no longer make new changes to it. We have to drop the table and start the model again for the effects to take place
+
+pip install alembic
+
+in cmd prompt
+
+alembic init
+
+alembic revision -m "create table n_post"
+
+alembic current / alembic heads
+
+alembic upgrade <revision no> or alembic downgrade -1 or alembic upgrade heads
+
+alembic revision --autogenerate -m "Create databases from sqlalchemy models file"
+
+CORS:
+cross origin resource sharing
+
+fetch('http://localhost:8080/').then(res => res.json()).then(console.log)
